@@ -54,7 +54,26 @@ class Wp_Listify_Public {
 		add_shortcode( "wplistify", [$this, "list_table_html"] );
 	}
 
-	function enqueue_head_style(){
+	function enqueue_head_styles(){
+		?>
+		<style>
+			:root{
+				--section_title_fontsize: <?php echo (get_option('wpl_section_title_fontsize') ? get_option('wpl_section_title_fontsize').'px' :'16px') ?>;
+				--column_title_fontsize: <?php echo (get_option('wpl_column_title_fontsize') ? get_option('wpl_column_title_fontsize').'px' :'14px') ?>;
+				--btn_text_fontsize: <?php echo (get_option('wpl_btn_text_fontsize') ? get_option('wpl_btn_text_fontsize').'px' :'12px') ?>;
+				--wpl_primary_color: <?php echo (get_option('wpl_primary_color') ? get_option('wpl_primary_color') : '#1e90ff') ?>;
+				--wpl_secondary_color: <?php echo (get_option('wpl_secondary_color')?get_option('wpl_secondary_color'):'#bb4444') ?>;
+				--wpl_text_color: <?php echo (get_option('wpl_text_color')?get_option('wpl_text_color'):'#333333') ?>;
+			}
+		</style>
+		<?php
+	}
+
+	function enqueue_styles(){
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ )."css/wp-listify.css", array(), microtime(), "all" );
+	}
+
+	function enqueue_amp_style(){
 		?>
 		@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 		@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');

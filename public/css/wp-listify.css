@@ -1,0 +1,178 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+div#wplistify {
+    border: 1px solid #ddd;
+    box-shadow: 0 0 8px -2px #cacaca;
+}
+
+.headerTitle {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.wplistifyContents {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 20px 0;
+}
+h3.listItemTitle {
+    font-size: var(--section_title_fontsize);
+    color: var(--wpl_text_color);
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+.listifySection .listItems {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.listItems .listItem {
+    display: flex;
+    background-image: linear-gradient(to right,#fff 0,#fff 67%,#9c9c9c 143%);
+    margin-bottom: 0;
+    border-bottom: 3px solid #e5e8ea;
+    box-shadow: 0 0 11px -6px #888;
+}
+
+.listItem > div {
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 4px -2px #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wplLogo {
+    width: 80%;
+    overflow: hidden;
+    height: 45px;
+}
+
+.wplLogo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.wplLogo > img[src=""] {
+    display: none;
+}
+
+.listItem > div > h3 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: var(--column_title_fontsize);
+    font-weight: bold;
+    color: var(--wpl_primary_color);
+}
+.listItem > div > p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--wpl_text_color);
+}
+a.getBonusBtn {
+    text-decoration: none !important;
+    background: linear-gradient(90deg,var(--wpl_primary_color) 1.56%,var(--wpl_secondary_color) 100%);
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    color: #fff !important;
+    border-radius: 10px 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: var(--btn_text_fontsize);
+    font-weight: 600;
+    animation: getBonusAnimation 2s ease infinite;
+    -webkit-animation: getBonusAnimation 2s ease infinite;
+    background-size: 400% 400%;
+    display: inline-flex;
+    line-height: 12px;
+    justify-content: center;
+}
+a.getBonusBtn:hover{
+    color: #ffffff;
+}
+
+@keyframes getBonusAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.columnLogo, .columnScore {
+    width: 20%;
+}
+.columnBonus {
+    width: 40%;
+}
+.columnButton {
+    width: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+    .listItem > div > h3, .listItem > div > p {
+        font-size: 12px;
+    }
+    a.getBonusBtn{
+        padding: 5px;
+    }
+    .wplStars {
+        display: flex;
+    }
+}
+@media only screen and (max-width: 580px) {
+    h3.listItemTitle {
+        font-size: 12px;
+    }
+    .columnScore {
+        display: none !important;
+    }
+    .columnLogo, .columnButton {
+        width: 25%;
+    }
+    .columnBonus {
+        width: 50%;
+    }
+    .listItem > div {
+        padding: 5px;
+        box-shadow: none;
+    }
+    .wplLogo {
+        width: 100%;
+        height: 28px;
+    }
+    .listItem > div > p{
+        font-size: 10px;
+        line-height: 11px;
+    }
+    .listItem > div > h3 {
+        display: none;
+    }
+    a.getBonusBtn {
+        padding: 6px 8px;
+        font-size: 10px;
+        line-height: 11px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 380px) {
+    a.getBonusBtn {
+        padding: 3px !important;
+        font-size: 8px !important;
+    }
+}
