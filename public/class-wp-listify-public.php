@@ -70,7 +70,7 @@ class Wp_Listify_Public {
 	}
 
 	function enqueue_styles(){
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ )."css/wp-listify.css", array(), microtime(), "all" );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ )."css/wp-listify.css", array(), "0.0.1", "all" );
 	}
 
 	function enqueue_amp_style(){
@@ -137,14 +137,14 @@ class Wp_Listify_Public {
 		}
 
 		.wplLogo {
-			width: 80%;
+			width: 100px;
 			overflow: hidden;
-			height: 45px;
+			height: 40px;
 		}
 
 		.wplLogo > img {
-			width: 100%;
-			height: 100%;
+			width: 100px;
+			height: 40px;
 			object-fit: contain;
 		}
 
@@ -223,7 +223,7 @@ class Wp_Listify_Public {
 		}
 		@media only screen and (max-width: 580px) {
 			h3.listItemTitle {
-				font-size: 12px;
+				font-size: 12px !important;
 			}
 			.columnScore {
 				display: none !important;

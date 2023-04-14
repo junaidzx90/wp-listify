@@ -23,13 +23,13 @@
         $fields = isset($section['fields']) ? $section['fields']: [];
         if(!is_array( $fields )) $fields = []; ?>
             <div class="listifySection">
-                <h3 class="listItemTitle"><?php echo stripslashes( $title ) ?></h3>
+                <h3 class="listItemTitle" style="font-size: <?php echo (get_option('wpl_section_title_fontsize') ? get_option('wpl_section_title_fontsize').'px' :'16px') ?>;"><?php echo stripslashes( $title ) ?></h3>
                 <div class="listItems">
                     <?php foreach($fields as $field){ ?>
                         <div class="listItem">
                             <div class="columnLogo">
                                 <a href="<?php echo esc_url( $field['buttonLink'] ) ?>" target="_blank" class="wplLogo">
-                                    <img src="<?php echo esc_url( $field['logoUrl'] ) ?>">
+                                    <img style="width: 100px; height: 40px" src="<?php echo esc_url( $field['logoUrl'] ) ?>">
                                 </a>
                             </div>
                             <div class="columnScore">
