@@ -145,7 +145,6 @@ class Wp_Listify_Admin {
 		// text color
 		add_settings_field( 'wpl_text_color', 'Text color ', [$this, 'wpl_text_color_cb'], 'wpl_setting_page','wpl_setting_section' );
 		register_setting( 'wpl_setting_section', 'wpl_text_color' );
-		
 	}
 
 	function wpl_shortcode_cb(){
@@ -194,6 +193,7 @@ class Wp_Listify_Admin {
 		$results = array_map(function($items) {
 			$items['title'] = stripslashes($items['title']);
 
+			if(!is_array($items['fields'])) $items['fields'] = [];
 			$items['fields'] = array_map(function($item){
 				$item['bonusTxt'] = stripslashes($item['bonusTxt']);
 				$item['stars'] = intval($item['stars']);
